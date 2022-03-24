@@ -15,5 +15,7 @@ A simple python script to enumerate writeables
 # Instalation
 
 ```git clone https://github.com/GiddyLinux/Binary-Enumerator.git```
+
 ```cd  Binary-Enumerator```
+
 ```python3 main.py```
