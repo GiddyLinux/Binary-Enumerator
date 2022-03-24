@@ -48,16 +48,21 @@ def main():
 	if sys.argv[1] == '-h':
 	    print('Help:\n-u : Finds all non default binaries | This could be any binaries added to a system after install\n-f : Finds all non binaries and shows their RWX \n-c :You can pass -c as third argument and define custom directores. \n    Usage: python3 main.py -<scantype> -c <directories separated by comma>')
 	    exit()
-	if sys.argv[2] == '-c':
-		custom_list = sys.argv[3].split(",",1)
-		for c in custom_list:
-			dir_list.append(c)
+
+	if len(sys.argv) > 2:
+		if len(sys.argv) == 3:
+			print('Not enough arguments provided for -c')
+		else:
+			if sys.argv[2] == '-c':
+				custom_list = sys.argv[3].split(",",1)
+				for c in custom_list:
+					dir_list.append(c)
 
 	for d in dir_list:
 		if sys.argv[1] == '-u':
 			bin_check('u',d)
 		if sys.argv[1] == '-f':
-				bin_check('f',d)
+			bin_check('f',d)
 	print(f'\nAll Writeable Binaries:\n\n{writeable}')
 
 main()
