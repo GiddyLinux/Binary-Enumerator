@@ -6,6 +6,7 @@ A simple python script to enumerate writeables
 
 - --
 -- No modules | Can be run without external pip modules
+
 -- Lightweight
 
 
